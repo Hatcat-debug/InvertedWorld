@@ -1,0 +1,98 @@
+﻿#define KWS_COMPUTE
+
+#define _FPS 6.0 // fps = KWS_ShorelineWaves.FPS / 3, because we skipped 2/3 frames
+
+#define _Scale float3(2.48, 1.35, 2.19);
+#define _Offset float3(0.36, 0.46, 0.494)
+#define _TimeLimit 10.5 //(14.0 * 15.0) / 20.0
+//#define _TimeLimit 70.0 //(14.0 * 15.0) / 20.0
+
+#define KWS_DISABLE_POINT_SPOT_SHADOWS
+
+#pragma multi_compile _ STEREO_INSTANCING_ON
+
+#pragma multi_compile _ KWS_FOAM_USE_FAST_MODE
+#pragma multi_compile _ KWS_USE_VOLUMETRIC_LIGHT
+#pragma multi_compile _ FOAM_RECEIVE_SHADOWS
+#pragma multi_compile _ KWS_USE_DIR_LIGHT
+
+#pragma multi_compile _ KWS_USE_POINT_LIGHTS
+#pragma multi_compile _ KWS_USE_SPOT_LIGHTS
+//#pragma multi_compile _ KWS_USE_SHADOW_POINT_LIGHTS
+//#pragma multi_compile _ KWS_USE_SHADOW_SPOT_LIGHTS
+
+#include "Includes/KWS_VertFragIncludes.cginc"
+#include "../PlatformSpecific/KWS_Lighting.cginc"
+
+half3 GetSceneColorAfterWaterPass(float2 uv)
+{
+	//#if KWS_USE_VOLUMETRIC_LIGHT
+	//	half3 volumeScattering = GetVolumetricLight(uv).xyz;
+	//#else
+	//	half3 volumeScattering = GetAmbientColor();
+	//#endif
+	//float3 underwaterColor = ComputeUnderwaterSurfaceColor(volumeScattering, KW_Transparent, KWS_DyeColor.xyz, KW_Turbidity, KW_TurbidityColor.xyz);
+	return saturate(GetAmbientColor(GetExposure()));
+}
+
+half3 GetLight(float3 worldPos, float2 screenUV)
+{
+	half3 result = 0;
+
+	#if defined(KWS_USE_DIR_LIGHT)
+		ShadowLightData light = KWS_DirLightsBuffer[0];
+		#if defined(FOAM_RECEIVE_SHADOWS)
+		    if(KWS_UseDirLightShadow == 1) light.color *= lerp(1, DirLightRealtimeShadow(0, worldPos), light.shadowStrength);
+		#endif
+		result += light.color;
+	#endif
+
+
+	#if defined(KWS_USE_POINT_LIGHTS)
+		UNITY_LOOP
+		for (uint pointIdx = 0; pointIdx < KWS_PointLightsCount; pointIdx++)
+		{
+			LightData light = KWS_PointLightsBuffer[pointIdx];
+			light.color *= PointLightAttenuation(pointIdx, worldPos);
+			result += light.color;
+		}
+	#endif
+
+	#if defined(KWS_USE_SHADOW_POINT_LIGHTS)
+		UNITY_LOOP
+		for (uint pointShadowIdx = 0; pointShadowIdx < KWS_ShadowPointLightsCount; pointShadowIdx++)
+		{
+			ShadowLightData light = KWS_ShadowPointLightsBuffer[pointShadowIdx];
+			light.color *= PointLightAttenuationShadow(pointShadowIdx, worldPos);
+			result += light.color;
+		}
+	#endif
+	
+	#if defined(KWS_USE_SPOT_LIGHTS)
+		UNITY_LOOP
+		for (uint SpotIdx = 0; SpotIdx < KWS_SpotLightsCount; SpotIdx++)
+		{
+			LightData light = KWS_SpotLightsBuffer[SpotIdx];
+			light.color *= SpotLightAttenuation(SpotIdx, worldPos);
+			result += light.color;
+		}
+	#endif
+	
+	#if defined(KWS_USE_SHADOW_SPOT_LIGHTS)
+		UNITY_LOOP
+		for (uint shadowSpotIdx = 0; shadowSpotIdx < KWS_ShadowSpotLightsCount; shadowSpotIdx++)
+		{
+			ShadowLightData light = KWS_ShadowSpotLightsBuffer[shadowSpotIdx];
+			light.color *= SpotLightAttenuationShadow(shadowSpotIdx, worldPos);
+			result += light.color;
+		}
+	#endif
+	
+	return result + GetAmbientColor(GetExposure());
+}
+
+#include "../Common/CommandPass/KWS_ShorelineFoam_Common.cginc"
+
+#pragma kernel ClearFoamBuffer
+#pragma kernel RenderFoamToBuffer
+#pragma kernel RenderFoamBufferToTexture

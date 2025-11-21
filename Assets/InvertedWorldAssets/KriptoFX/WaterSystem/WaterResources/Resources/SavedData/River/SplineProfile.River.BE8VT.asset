@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec75ce71e21e40849beed5184a1b355f, type: 3}
+  m_Name: SplineProfile.River.BE8VT
+  m_EditorClassIdentifier: 
+  Splines:
+  - InitialSplinePosition: {x: 0, y: 0, z: 0}
+    ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 41.233917, y: 2.3890424, z: -185.52058}
+      Width: 42.51649
+    - ID: 1
+      WorldPosition: {x: 35.611874, y: 1.8951529, z: -158.80907}
+      Width: 50.018738
+    - ID: 2
+      WorldPosition: {x: 30.075455, y: 0.71767235, z: -120.40103}
+      Width: 54.91805
+    - ID: 3
+      WorldPosition: {x: 23.434803, y: 1.2374649, z: -75.76746}
+      Width: 55.421875
+    - ID: 4
+      WorldPosition: {x: 16.859161, y: 0.82954407, z: -32.568497}
+      Width: 121.844215
+    - ID: 5
+      WorldPosition: {x: 27.901976, y: 1.5015154, z: 21.318089}
+      Width: 148.1445
+    - ID: 9
+      WorldPosition: {x: 0.4313736, y: 6.0845346, z: 156.74115}
+      Width: 142.77168
+    VertexCountBetweenPoints: 25
+    Depth: 10
