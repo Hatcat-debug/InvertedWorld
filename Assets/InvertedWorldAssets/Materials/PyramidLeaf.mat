@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ice Flake
-  m_Shader: {fileID: 4800000, guid: 86ef8b73b41ef5e4ea9e566e958529cf, type: 3}
+  m_Name: PyramidLeaf
+  m_Shader: {fileID: 4800000, guid: 4a70946ca8b9aae42a4d4a3600fcf519, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -79,7 +79,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.284004, g: 0.3707649, b: 0.44099998, a: 0.6509804}
+    - _Color: {r: 0.25240263, g: 0.32941177, b: 0.24277648, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

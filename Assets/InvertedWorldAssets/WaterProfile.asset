@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf75699500d2c349aac22df3efb5415, type: 3}
   m_Name: WaterProfile
   m_EditorClassIdentifier: 
-  Transparent: 8
+  Transparent: 5
   DyeColor: {r: 1, g: 1, b: 1, a: 1}
-  TurbidityColor: {r: 0, g: 0.057440918, b: 0.07816702, a: 1}
+  TurbidityColor: {r: 0, g: 0, b: 0, a: 1}
   UseGlobalWind: 1
   GlobalWindZone: {fileID: 0}
   GlobalWindZoneSpeedMultiplier: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
   IntersectionFoamFadeDistance: 0.1
   IntersectionTextureFoamSize: 25
   ReflectionProfile: 3
-  UseScreenSpaceReflection: 1
+  UseScreenSpaceReflection: 0
   ScreenSpaceReflectionResolutionQuality: 35
   UseScreenSpaceReflectionHolesFilling: 1
   UseScreenSpaceReflectionSky: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   RiverSplineNormalOffset: 1
   RiverSplineVertexCountBetweenPoints: 20
   RiverSplineDepth: 10
-  CustomMesh: {fileID: 0}
+  CustomMesh: {fileID: 2807879749277179277, guid: 97a60424852fc114daadb6e088a9fdd6, type: 3}
   WaterMeshQualityInfinite: 2
   WaterMeshQualityFinite: 2
   UseTesselation: 0
