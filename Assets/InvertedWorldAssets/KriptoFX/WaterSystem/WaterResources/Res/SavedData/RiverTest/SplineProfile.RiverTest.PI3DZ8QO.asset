@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec75ce71e21e40849beed5184a1b355f, type: 3}
+  m_Name: SplineProfile.RiverTest.PI3DZ8QO
+  m_EditorClassIdentifier: 
+  Splines:
+  - InitialSplinePosition: {x: 11.46, y: 23.67, z: 75.01}
+    ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 68.13604, y: 15.329393, z: 128.91582}
+      Width: 26.718122
+    - ID: 1
+      WorldPosition: {x: 56.05857, y: 15.785031, z: 102.08492}
+      Width: 40.438534
+    - ID: 2
+      WorldPosition: {x: 45.818844, y: 15.931717, z: 81.557045}
+      Width: 28.390541
+    - ID: 3
+      WorldPosition: {x: 38.376987, y: 15.97546, z: 59.842434}
+      Width: 39.257225
+    - ID: 4
+      WorldPosition: {x: 32.35515, y: 16.59346, z: 36.98115}
+      Width: 39.257225
+    - ID: 5
+      WorldPosition: {x: 25.189682, y: 13.878983, z: 10.350761}
+      Width: 39.257225
+    - ID: 6
+      WorldPosition: {x: 28.09053, y: 9.278412, z: -18.051575}
+      Width: 39.257225
+    - ID: 7
+      WorldPosition: {x: 31.383417, y: 7.858178, z: -43.7284}
+      Width: 39.257225
+    - ID: 9
+      WorldPosition: {x: 33.95462, y: 5.3037896, z: -65.785355}
+      Width: 63.181885
+    - ID: 10
+      WorldPosition: {x: 32.942627, y: 5.4920325, z: -85.83846}
+      Width: 80.374405
+    - ID: 11
+      WorldPosition: {x: 23.3452, y: 5.307142, z: -108.62896}
+      Width: 140.87871
+    VertexCountBetweenPoints: 25
+    Depth: 10
+  - InitialSplinePosition: {x: 11.46, y: 23.67, z: 75.01}
+    ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 96.05386, y: 36.787594, z: 61.52292}
+      Width: 10
+    - ID: 1
+      WorldPosition: {x: 86.43646, y: 36.233635, z: 65.95346}
+      Width: 10
+    - ID: 2
+      WorldPosition: {x: 77.16809, y: 32.486893, z: 70.514565}
+      Width: 10
+    - ID: 3
+      WorldPosition: {x: 73.91576, y: 24.68295, z: 71.454926}
+      Width: 10
+    - ID: 4
+      WorldPosition: {x: 65.08035, y: 16.081997, z: 73.607414}
+      Width: 15.248108
+    - ID: 5
+      WorldPosition: {x: 52.296513, y: 15.862946, z: 74.10734}
+      Width: 12.375966
+    - ID: 6
+      WorldPosition: {x: 42.90692, y: 14.583681, z: 75.40236}
+      Width: 12.375966
+    VertexCountBetweenPoints: 25
+    Depth: 10
+  - InitialSplinePosition: {x: 11.46, y: 23.67, z: 75.01}
+    ID: 0
+    SplinePoints:
+    - ID: 0
+      WorldPosition: {x: 79.10022, y: 39.194492, z: 142.94247}
+      Width: 10
+    - ID: 1
+      WorldPosition: {x: 64.539024, y: 30.859406, z: 148.76321}
+      Width: 10
+    - ID: 2
+      WorldPosition: {x: 52.127747, y: 23.65841, z: 153.5748}
+      Width: 10
+    - ID: 3
+      WorldPosition: {x: 36.58459, y: 15.078123, z: 147.00159}
+      Width: 10
+    - ID: 4
+      WorldPosition: {x: 16.20253, y: 8.728106, z: 134.54205}
+      Width: 10
+    - ID: 5
+      WorldPosition: {x: -7.876047, y: 6.1709785, z: 124.92105}
+      Width: 10
+    - ID: 6
+      WorldPosition: {x: -39.930695, y: 3.9546442, z: 120.16876}
+      Width: 10
+    - ID: 7
+      WorldPosition: {x: -69.03319, y: 1, z: 118.87442}
+      Width: 10
+    - ID: 8
+      WorldPosition: {x: -108.18764, y: 1, z: 107.60809}
+      Width: 10
+    - ID: 9
+      WorldPosition: {x: -142.35611, y: 1, z: 116.05539}
+      Width: 10
+    VertexCountBetweenPoints: 5
+    Depth: 10

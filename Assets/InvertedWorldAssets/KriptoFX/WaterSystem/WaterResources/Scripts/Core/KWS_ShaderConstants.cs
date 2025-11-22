@@ -18,8 +18,7 @@ namespace KWS
             public static readonly string CausticComputeShaderName             = "Hidden/KriptoFX/KWS/Caustic_Pass";
             public static readonly string CausticDecalShaderName               = "Hidden/KriptoFX/KWS/CausticDecal";
             public static readonly string FlowMapShaderName                    = "Hidden/KriptoFX/KWS/FlowMapEdit";
-            //public static readonly string UnderwaterShaderName                 = "Hidden/KriptoFX/KWS/Underwater";
-            public static readonly string UnderwaterShaderName                 = "Hidden/KriptoFX/KWS/UnderwaterModified";
+            public static readonly string UnderwaterShaderName                 = "Hidden/KriptoFX/KWS/Underwater";
             public static readonly string UnderwaterBlurToScreenShaderName     = "Hidden/KriptoFX/KWS/UnderwaterBlurToScreenPass";
             public static readonly string CopyColorShaderName                  = "Hidden/KriptoFX/KWS/CopyColorTexture";
             public static readonly string DrawToDepthShaderName                = "Hidden/KriptoFX/KWS/DrawToDepth";
